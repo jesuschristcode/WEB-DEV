@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+    <title>LMS</title>
+</head>
+
+<body>
+    <header>
+        <img src="icons/Jesus.png" alt="" />
+        <h1>Lecture Management System</h1>
+        <img src="icons/Jesus.png" alt="" />
+    </header>
+    <main>
+        <!-- Navigation for the student system. -->
+        <nav>
+            <button id="addLessonSidebarBtn">
+                ADD LESSON
+            </button>
+            <button id="addStudentSidebarBtn">
+                ADD STUDENT
+            </button>
+            <button id="studentsOfLessonSidebarBtn">
+                STUDENTS LESSON
+            </button>
+            <button id="showAllStudentsSidebarBtn">
+                SHOW ALL STUDENTS
+            </button>
+            <button id="searchStudentSidebarBtn">
+                SEARCH STUDENTS
+            </button>
+        </nav>
+        <!-- Content area for the student system. -->
+        <div id="content-area">
+            <div id="addLessonSidebarBtnDiv">
+                <form>
+                    <div class="form-group">
+                        <label for="lessonID">Lesson ID</label>
+                        <input type="text" id="lessonID" />
+                    </div>
+                    <div class="form-group">
+                        <label for="lessonName">Lesson Name</label>
+                        <input type="text" id="lessonName" />
+                    </div>
+                    <div class="form-group">
+                        <label for="pointScale">Point Scale</label>
+                        <select name="pointScale" id="pointScale">
+                            <option value="" id="generalOption">Select Point Scale</option>
+                            <option value="7">7 Point Scale</option>
+                            <option value="10">10 Point Scale</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="tableBtn" id="addLessonSubBtn">
+                        Add Lesson
+                    </button>
+                </form>
+                <button type="submit" class="tableBtn" id="saveLessonBtn">
+                    SAVE CHANGES
+                </button>
+                <table id="addLessonTable">
+                    <tr>
+                        <th>Lesson ID</th>
+                        <th>Lesson Name</th>
+                        <th>Point Scale</th>
+                        <th>Edit Button</th>
+                        <th>Delete Button</th>
+                    </tr>
+                </table>
+            </div>
+            <!--Adding Studentn Area-->
+            <div id="addStudentSidebarBtnDiv">
+                <form>
+                    <div class="form-group">
+                        <label for="studentID">Student ID</label>
+                        <input type="number" id="studentID" min="0" />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="surname">Surname</label>
+                        <input type="text" id="surname" />
+                    </div>
+                    <div class="form-group">
+                        <label for="lesson">Lesson</label>
+                        <select name="Lesson" id="lesson">
+                            <option value="" id="generalOption">Select Lesson</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="midterm">Midterm(0-100)</label>
+                        <input type="number" id="midterm" min="0" max="100" />
+                    </div>
+                    <div class="form-group">
+                        <label for="final">Final(0-100)</label>
+                        <input type="number" id="final" min="0" max="100" />
+                    </div>
+                    <button type="submit" class="tableBtn" id="addStudentSubBtn">
+                        Add Student
+                    </button>
+                </form>
+                <table id="addStudentTable">
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>Surame</th>
+                        <th>Lesson</th>
+                        <th>Midterm</th>
+                        <th>Final</th>
+                        <th>Letter Grade</th>
+                        <th>Edit Button</th>
+                        <th>Delete Button</th>
+                    </tr>
+                </table>
+                <button type="submit" class="tableBtn" id="saveStudentBtn">
+                    SAVE CHANGES
+                </button>
+            </div>
+            <div id="studentOfLessonSidebarBtnDiv">
+                <form>
+                    <select name="searchLesson" id="searchLesson">
+                        <option value="" id="generalOption">Select Lesson</option>
+                    </select>
+                    <select name="rating" id="rating">
+                        <option value="" id="generalOption">Select Rating</option>
+                        <option value="Passed">Passed</option>
+                        <option value="Failed">Failed</option>
+                        <option value="AllStudent">All Students</option>
+                    </select>
+                    <button type="submit" class="tableBtn" id="studentOfLessonSubBtn">
+                        Search
+                    </button>
+                </form>
+                <button type="submit" class="tableBtn" id="saveStudentOfLessonBtn">
+                    SAVE CHANGES
+                </button>
+                <table id="studentsOfLessonTable">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Lesson</th>
+                        <th>Midterm</th>
+                        <th>Final</th>
+                        <th>Letter Grade</th>
+                        <th>Edit Button</th>
+                        <th>Delete Button</th>
+                    </tr>
+                </table>
+            </div>
+            <div id="showAllStudentSidebarBtnDiv">
+                <button type="submit" class="tableBtn" id="saveAllStudentsBtn">
+                    SAVE CHANGES
+                </button>
+                <table id="showAllStudenstsTable">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>GPA</th>
+                        <th>Edit Button</th>
+                        <th>Delete Student Button</th>
+                    </tr>
+                </table>
+
+            </div>
+            <div id="searchStudentsidebarBtnDiv">
+                <div class="form-group">
+                    <label for="searchByID">Search Student By ID</label>
+                    <input type="number" id="searchStudentByID" onclick="" />
+                </div>
+                <button type="submit" class="tableBtn" id="searchStudentSubBtn">
+                    Search
+                </button>
+                <input type="text" id="searchbynameval" />
+                <button id="searchbyname">Search By Name</button>
+                Search
+                </button>
+                <button type="submit" class="tableBtn" id="saveSearchStudentBtn">
+                    SAVE CHANGES
+                </button>
+                <table id="searchStudentTable">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Lesson</th>
+                        <th>Midterm</th>
+                        <th>Final</th>
+                        <th>Letter Grade</th>
+                        <th>Edit Button</th>
+                        <th>Delete Button</th>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </main>
+    <!-- Footer for the student system that describes the contact information about system. -->
+    <footer>
+        <h4>Student System created by Magnus Carlsen</h4>
+        <p>Contact informationjesus253253@gmail.com .</p>
+    </footer>
+</body>
+
+</html>
